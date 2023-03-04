@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="page">
+  <div class="container">
+    <header class="header container__section">
+      <img src="./images/header-logo.svg" alt="Логотип" class="header__logo">
+      <div class="header__line"></div>
+    </header>
+    <main class="content">
+      <section class="profile content__section">
+        <img src="./images/profile-avatar.jpg" alt="Аватарка" class="profile__avatar">
+        <div class="profile__info">
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <button class="profile__edit-button"></button>
+          <p class="profile__title-subline">Исследователь океана</p>
+        </div>
+        <button class="profile__add-button"></button>
+      </section>
+      <section class="photo-grid content__section">
+        <ul class="photo-grid__list">
+          <li class="photo-grid__item">
+            <img src="./images/photo-grid-karachaevsk.jpg" alt="Дом на скалах в Карачаевске" class="photo-grid__image">
+            <div class="photo-grid__like-place">
+              <h2 class="photo-grid__title">Карачаевск</h2>
+              <button class="photo-grid__like-button"></button>
+            </div>
+          </li>
+          <li class="photo-grid__item">
+            <img src="./images/photo-grid-elbrus.jpg" alt="Восход в горах Эльбруса" class="photo-grid__image">
+            <div class="photo-grid__like-place">
+              <h2 class="photo-grid__title">Гора Эльбрус</h2>
+              <button class="photo-grid__like-button"></button>
+            </div>
+          </li>
+          <li class="photo-grid__item">
+            <img src="./images/photo-grid-niagarskiy.jpg" alt="Ниагарский водопад" class="photo-grid__image">
+            <div class="photo-grid__like-place">
+              <h2 class="photo-grid__title">Ниагарский водопад</h2>
+              <button class="photo-grid__like-button"></button>
+            </div>
+          </li>
+          <li class="photo-grid__item">
+            <img src="./images/photo-grid-algarvi.jpg" alt="Алгарви" class="photo-grid__image">
+            <div class="photo-grid__like-place">
+              <h2 class="photo-grid__title">Алгарви</h2>
+              <button class="photo-grid__like-button"></button>
+            </div>
+          </li>
+          <li class="photo-grid__item">
+            <img src="./images/photo-grid-neurathen.jpg" alt="Скальный замок Нойратен" class="photo-grid__image">
+            <div class="photo-grid__like-place">
+              <h2 class="photo-grid__title">Нойратен</h2>
+              <button class="photo-grid__like-button"></button>
+            </div>
+          </li>
+          <li class="photo-grid__item">
+            <img src="./images/photo-grid-ilulissat.jpg" alt="Айсберг в Илулиссате" class="photo-grid__image">
+            <div class="photo-grid__like-place">
+              <h2 class="photo-grid__title">Илулиссат</h2>
+              <button class="photo-grid__like-button"></button>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer container__section">
+      <p class="footer__info">&copy; 2020 Mesto Russia</p>
+    </footer>
+    <section class="popup">
+      <form class="popup__container">
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <fieldset class="popup__input-container popup__input-container_ctrl_texts">
+          <input type="text" class="popup__item popup__item_type_name" placeholder="Имя" required>
+          <input type="text" class="popup__item popup__item_type_job" placeholder="О себе" required>
+        </fieldset>
+        <fieldset class="popup__input-container popup__input-container_handlers">
+          <input type="submit" class="popup__button" value="Сохранить">
+        </fieldset>
+        <button type="reset" class="popup__close-icon"></button>
+      </form>
+    </section>
+  </div>
+<script src="./pages/index.js"></script>
+</body>
+</html>

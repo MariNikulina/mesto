@@ -1,0 +1,15 @@
+.profile__title-subline {
+  font-size: 18px;
+  line-height: 1.22;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 650px) {
+  .profile__title-subline {
+    font-size: 14px;
+    line-height: 1.21;
+    justify-self: center;
+  }
+}
