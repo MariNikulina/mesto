@@ -10,60 +10,59 @@
   <div class="container">
     <header class="header container__section">
       <img src="./images/header-logo.svg" alt="Логотип" class="header__logo">
-      <div class="header__line"></div>
     </header>
     <main class="content">
       <section class="profile content__section">
         <img src="./images/profile-avatar.jpg" alt="Аватарка" class="profile__avatar">
         <div class="profile__info">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button"></button>
+          <button type="button" class="profile__edit-button" aria-label="Редактировать"></button>
           <p class="profile__title-subline">Исследователь океана</p>
         </div>
-        <button class="profile__add-button"></button>
+        <button type="button" class="profile__add-button" aria-label="Добавить"></button>
       </section>
       <section class="photo-grid content__section">
         <ul class="photo-grid__list">
-          <li class="photo-grid__item">
-            <img src="./images/photo-grid-karachaevsk.jpg" alt="Дом на скалах в Карачаевске" class="photo-grid__image">
-            <div class="photo-grid__like-place">
-              <h2 class="photo-grid__title">Карачаевск</h2>
-              <button class="photo-grid__like-button"></button>
+          <li class="card">
+            <img src="./images/photo-grid-karachaevsk.jpg" alt="Дом на скалах в Карачаевске" class="card__image">
+            <div class="card__like-place">
+              <h2 class="card__title">Карачаевск</h2>
+              <button type="button" class="card__like-button" aria-label="Нравится"></button>
             </div>
           </li>
-          <li class="photo-grid__item">
-            <img src="./images/photo-grid-elbrus.jpg" alt="Восход в горах Эльбруса" class="photo-grid__image">
-            <div class="photo-grid__like-place">
-              <h2 class="photo-grid__title">Гора Эльбрус</h2>
-              <button class="photo-grid__like-button"></button>
+          <li class="card">
+            <img src="./images/photo-grid-elbrus.jpg" alt="Восход в горах Эльбруса" class="card__image">
+            <div class="card__like-place">
+              <h2 class="card__title">Гора Эльбрус</h2>
+              <button type="button" class="card__like-button" aria-label="Нравится"></button>
             </div>
           </li>
-          <li class="photo-grid__item">
-            <img src="./images/photo-grid-niagarskiy.jpg" alt="Ниагарский водопад" class="photo-grid__image">
-            <div class="photo-grid__like-place">
-              <h2 class="photo-grid__title">Ниагарский водопад</h2>
-              <button class="photo-grid__like-button"></button>
+          <li class="card">
+            <img src="./images/photo-grid-niagarskiy.jpg" alt="Ниагарский водопад" class="card__image">
+            <div class="card__like-place">
+              <h2 class="card__title">Ниагарский водопад</h2>
+              <button type="button" class="card__like-button" aria-label="Нравится"></button>
             </div>
           </li>
-          <li class="photo-grid__item">
-            <img src="./images/photo-grid-algarvi.jpg" alt="Алгарви" class="photo-grid__image">
-            <div class="photo-grid__like-place">
-              <h2 class="photo-grid__title">Алгарви</h2>
-              <button class="photo-grid__like-button"></button>
+          <li class="card">
+            <img src="./images/photo-grid-algarvi.jpg" alt="Алгарви" class="card__image">
+            <div class="card__like-place">
+              <h2 class="card__title">Алгарви</h2>
+              <button type="button" class="card__like-button" aria-label="Нравится"></button>
             </div>
           </li>
-          <li class="photo-grid__item">
-            <img src="./images/photo-grid-neurathen.jpg" alt="Скальный замок Нойратен" class="photo-grid__image">
-            <div class="photo-grid__like-place">
-              <h2 class="photo-grid__title">Нойратен</h2>
-              <button class="photo-grid__like-button"></button>
+          <li class="card">
+            <img src="./images/photo-grid-neurathen.jpg" alt="Скальный замок Нойратен" class="card__image">
+            <div class="card__like-place">
+              <h2 class="card__title">Нойратен</h2>
+              <button type="button" class="card__like-button" aria-label="Нравится"></button>
             </div>
           </li>
-          <li class="photo-grid__item">
-            <img src="./images/photo-grid-ilulissat.jpg" alt="Айсберг в Илулиссате" class="photo-grid__image">
-            <div class="photo-grid__like-place">
-              <h2 class="photo-grid__title">Илулиссат</h2>
-              <button class="photo-grid__like-button"></button>
+          <li class="card">
+            <img src="./images/photo-grid-ilulissat.jpg" alt="Айсберг в Илулиссате" class="card__image">
+            <div class="card__like-place">
+              <h2 class="card__title">Илулиссат</h2>
+              <button type="button" class="card__like-button" aria-label="Нравится"></button>
             </div>
           </li>
         </ul>
@@ -73,19 +72,19 @@
       <p class="footer__info">&copy; 2020 Mesto Russia</p>
     </footer>
     <section class="popup">
-      <form class="popup__container">
-        <h2 class="popup__title">Редактировать профиль</h2>
-        <fieldset class="popup__input-container popup__input-container_ctrl_texts">
-          <input type="text" class="popup__item popup__item_type_name" placeholder="Имя" required>
-          <input type="text" class="popup__item popup__item_type_job" placeholder="О себе" required>
-        </fieldset>
-        <fieldset class="popup__input-container popup__input-container_handlers">
+      <div class="popup__container">
+        <button type="button" class="popup__close-icon" aria-label="Закрыть"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form action="#" class="popup__form" name="popup">
+          <fieldset class="popup__input-container">
+            <input type="text" class="popup__item popup__item_type_name" placeholder="Имя" name="input-name" required>
+            <input type="text" class="popup__item popup__item_type_job" placeholder="О себе" name="input-job" required>
+          </fieldset>
           <input type="submit" class="popup__button" value="Сохранить">
-        </fieldset>
-        <button type="reset" class="popup__close-icon"></button>
-      </form>
+        </form>
+      </div>
     </section>
   </div>
-<script src="./pages/index.js"></script>
+<script src="./scripts/index.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
-.photo-grid__item {
+.card {
   border-radius: 10px;
   background-color: white;
+  box-sizing: border-box;
 }

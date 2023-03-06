@@ -1,9 +1,0 @@
-.popup__input-container_ctrl_texts {
-  margin-top: 47px;
-}
-
-@media screen and (max-width: 650px) {
-  .popup__input-container_ctrl_texts {
-    margin-top: 75px;
-  }
-}
