@@ -11,6 +11,12 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 900px) {
+  .profile__title-subline {
+    max-width: 230px;
+  }
+}
+
 @media screen and (max-width: 650px) {
   .profile__title-subline {
     font-size: 14px;

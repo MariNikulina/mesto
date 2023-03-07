@@ -13,11 +13,13 @@ function closePopup () {
 
 buttonClosePopup.addEventListener('click', closePopup);
 
+/*
 const closePopupByClickOnOverlay = function (event) {
   if (event.target === event.currentTarget) {
     closePopup();
   }
 };
+*/
 
 function openPopup () {
 
