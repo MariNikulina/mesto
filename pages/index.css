@@ -14,183 +14,27 @@
 @import url(../blocks/profile/__title-subline/profile__title-subline.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/photo-grid/__list/photo-grid__list.css);
+
 @import url(../blocks/card/card.css);
 @import url(../blocks/card/__image/card__image.css);
 @import url(../blocks/card/__like-place/card__like-place.css);
 @import url(../blocks/card/__title/card__title.css);
 @import url(../blocks/card/__like-button/card__like-button.css);
 @import url(../blocks/card/__like-button/_active/card__like-button_active.css);
+@import url(../blocks/card/__trash-button/card__trash-button.css);
+
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__info/footer__info.css);
 @import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_popup/popup_popup_image.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);
+@import url(../blocks/popup/__container/_popup/popup__container_popup_image.css);
+@import url(../blocks/popup/__figure/popup__figure.css);
 @import url(../blocks/popup/__title/popup__title.css);
+@import url(../blocks/popup/__title/_popup/popup__title_popup_image.css);
 @import url(../blocks/popup/__input-container/popup__input-container.css);
 @import url(../blocks/popup/__item/popup__item.css);
 @import url(../blocks/popup/__button/popup__button.css);
 @import url(../blocks/popup/__close-icon/popup__close-icon.css);
-
-.card__trash-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  min-width: 18px;
-  min-height: 19px;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-  transition: opacity .4s;
-  background-color: transparent;
-  background-image: url(../images/photo-grid-button-trash.svg);
-  background-repeat: no-repeat;
-  background-position: center center;
-}
-
-.card__like-button:hover {
-  opacity: 0.6;
-}
-
-.popup-cards {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-.popup-cards__container {
-  max-width: 430px;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 34px 36px 36.51px;
-  background-color: #FFFFFF;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 10px;
-  color: #000000;
-  z-index: 2;
-  position: relative;
-}
-
-@media screen and (max-width: 650px) {
-  .popup-cards__container {
-    max-width: 282px;
-    padding: 25px 22px;
-  }
-}
-
-.popup-cards__close-icon {
-  position: absolute;
-  top: -40px;
-  right: -40px;
-  border: 0;
-  background-color: transparent;
-  background-image: url(../../../images/popup-close-icon.svg);
-  background-size: cover;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 650px) {
-  .popup-cards__close-icon {
-    top: -36px;
-    right: 0;
-    width: 20px;
-    height: 20px;
-  }
-}
-
-.popup-cards__close-icon:hover {
-  opacity: 0.6;
-}
-
-.popup-cards__title {
-  margin: 0;
-  padding: 0;
-  font-size: 24px;
-  line-height: 1.21;
-  font-weight: 900;
-}
-
-@media screen and (max-width: 650px) {
-  .popup-cards__title {
-    font-size: 18px;
-    line-height: 1.22;
-  }
-}
-
-.popup-cards__input-container {
-  margin: 47px auto 0;
-  padding: 0;
-  width: 100%;
-  border: 0;
-}
-
-@media screen and (max-width: 650px) {
-  .popup-cards__input-container {
-    margin-top: 75px;
-  }
-}
-
-.popup-cards__item {
-  display: block;
-  border: 0;
-  width: 100%;
-  min-height: 27.26px;
-  box-sizing: border-box;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  font-size: 14px;
-  line-height: 1.21;
-  font-weight: 400;
-  font-family: inherit;
-  background-color: transparent;
-  color: #000000;
-  padding-bottom: 5px;
-}
-
-.popup-cards__item:focus {
-  outline-color: #6391c1;
-}
-
-.popup-cards__item:nth-of-type(1) {
-  margin-bottom: 29.74px;
-}
-
-.popup-cards__button {
-  border: 0;
-  border-radius: 2px;
-  padding: 0;
-  margin-top: 48px;
-  width: 100%;
-  min-height: 50.15px;
-  background-color: #000000;
-  color: white;
-  font-size: 18px;
-  line-height: 1.22;
-  font-weight: 400;
-  font-family: inherit;
-  cursor: pointer;
-}
-
-@media screen and (max-width: 650px) {
-  .popup-cards__button {
-    margin-top: 45px;
-    min-height: 46px;
-    font-size: 14px;
-    line-height: 1.21;
-  }
-}
-
-.popup-cards__button:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.popup-cards_opened {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+@import url(../blocks/popup/__picture/popup__picture.css);

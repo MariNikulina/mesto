@@ -23,65 +23,18 @@
       </section>
       <section class="photo-grid content__section">
         <ul class="photo-grid__list">
-          <li class="card">
-            <img src="./images/photo-grid-karachaevsk.jpg" alt="Дом на скалах в Карачаевске" class="card__image">
-            <button type="button" class="card__trash-button" aria-label="Удалить"></button>
-            <div class="card__like-place">
-              <h2 class="card__title">Карачаевск</h2>
-              <button type="button" class="card__like-button" aria-label="Нравится"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/photo-grid-elbrus.jpg" alt="Восход в горах Эльбруса" class="card__image">
-            <button type="button" class="card__trash-button" aria-label="Удалить"></button>
-            <div class="card__like-place">
-              <h2 class="card__title">Гора Эльбрус</h2>
-              <button type="button" class="card__like-button" aria-label="Нравится"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/photo-grid-niagarskiy.jpg" alt="Ниагарский водопад" class="card__image">
-            <button type="button" class="card__trash-button" aria-label="Удалить"></button>
-            <div class="card__like-place">
-              <h2 class="card__title">Ниагарский водопад</h2>
-              <button type="button" class="card__like-button" aria-label="Нравится"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/photo-grid-algarvi.jpg" alt="Алгарви" class="card__image">
-            <button type="button" class="card__trash-button" aria-label="Удалить"></button>
-            <div class="card__like-place">
-              <h2 class="card__title">Алгарви</h2>
-              <button type="button" class="card__like-button" aria-label="Нравится"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/photo-grid-neurathen.jpg" alt="Скальный замок Нойратен" class="card__image">
-            <button type="button" class="card__trash-button" aria-label="Удалить"></button>
-            <div class="card__like-place">
-              <h2 class="card__title">Нойратен</h2>
-              <button type="button" class="card__like-button" aria-label="Нравится"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/photo-grid-ilulissat.jpg" alt="Айсберг в Илулиссате" class="card__image">
-            <button type="button" class="card__trash-button" aria-label="Удалить"></button>
-            <div class="card__like-place">
-              <h2 class="card__title">Илулиссат</h2>
-              <button type="button" class="card__like-button" aria-label="Нравится"></button>
-            </div>
-          </li>
+
         </ul>
       </section>
     </main>
     <footer class="footer container__section">
       <p class="footer__info">&copy; 2020 Mesto Russia</p>
     </footer>
-    <section class="popup">
+    <section class="popup popup_popup_profile">
       <div class="popup__container">
         <button type="button" class="popup__close-icon" aria-label="Закрыть"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <form action="#" class="popup__form" name="popup">
+        <form action="#" class="popup__form popup__form_popup_profile" name="popup-profile">
           <fieldset class="popup__input-container">
             <input type="text" class="popup__item popup__item_type_name" placeholder="Имя" name="input-name" required>
             <input type="text" class="popup__item popup__item_type_job" placeholder="О себе" name="input-job" required>
@@ -90,19 +43,38 @@
         </form>
       </div>
     </section>
-    <section class="popup-cards">
-      <div class="popup-cards__container">
-        <button type="button" class="popup-cards__close-icon" aria-label="Закрыть"></button>
-        <h3 class="popup-cards__title">Редактировать профиль</h3>
-        <form action="#" class="popup-cards__form" name="popup-cards">
-          <fieldset class="popup-cards__input-container">
-            <input type="text" class="popup-cards__item popup-cards__item_type_name" placeholder="Название" name="input-title" required>
-            <input type="text" class="popup-cards__item popup-cards__item_type_job" placeholder="Ссылка на картинку" name="input-href" required>
+    <section class="popup popup_popup_cards">
+      <div class="popup__container">
+        <button type="button" class="popup__close-icon a" aria-label="Закрыть"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <form action="#" class="popup__form popup__form_popup_cards" name="popup-cards">
+          <fieldset class="popup__input-container">
+            <input type="text" class="popup__item popup__item_type_title" placeholder="Название" name="input-title" required>
+            <input type="text" class="popup__item popup__item_type_href" placeholder="Ссылка на картинку" name="input-href" required>
           </fieldset>
-          <input type="submit" class="popup-cards__button" value="Сохранить">
+          <input type="submit" class="popup__button" value="Сохранить">
         </form>
       </div>
     </section>
+    <section class="popup popup_popup_image">
+      <div class="popup__container popup__container_popup_image">
+        <button type="button" class="popup__close-icon" aria-label="Закрыть"></button>
+        <figure class="popup__figure">
+          <img src="#" alt="Увеличенное изображение" class="popup__picture">
+          <figcaption class="popup__title popup__title_popup_image"></figcaption>
+        </figure>
+      </div>
+    </section>
+    <template id="card-template">
+      <li class="card">
+        <img src="#" alt="Название места" class="card__image">
+        <button type="button" class="card__trash-button" aria-label="Удалить"></button>
+        <div class="card__like-place">
+          <h2 class="card__title"></h2>
+          <button type="button" class="card__like-button" aria-label="Нравится"></button>
+        </div>
+      </li>
+    </template>
   </div>
 <script src="./scripts/index.js"></script>
 </body>
