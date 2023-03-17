@@ -18,4 +18,4 @@
 
 **Результат**
 
-Посмотреть проктную работу можно по [ссылке](https://marinikulina.github.io/mesto/).
+Посмотреть проектную работу можно по [ссылке](https://marinikulina.github.io/mesto/).
