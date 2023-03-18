@@ -45,8 +45,7 @@ function openProfilePopup () {
 
 };
 
-buttonOpenPopup.addEventListener('click', () => openPopup(formElement));
-
+buttonOpenPopup.addEventListener('click', () => openProfilePopup());
 
 function handleFormSubmit (evt) {
   evt.preventDefault();
