@@ -37,7 +37,9 @@
         <form action="#" class="popup__form popup__form_popup_profile" name="popup-profile">
           <fieldset class="popup__input-container">
             <input type="text" class="popup__item popup__item_type_name" placeholder="Имя" name="input-name" required>
+            <span class="popup__error" id="input-name-error"></span>
             <input type="text" class="popup__item popup__item_type_job" placeholder="О себе" name="input-job" required>
+            <span class="popup__error" id="input-job-error"></span>
           </fieldset>
           <input type="submit" class="popup__button" value="Сохранить">
         </form>
@@ -50,7 +52,9 @@
         <form action="#" class="popup__form popup__form_popup_cards" name="popup-cards">
           <fieldset class="popup__input-container">
             <input type="text" class="popup__item popup__item_type_title" placeholder="Название" name="input-title" required>
+            <span class="popup__error" id="input-title-error"></span>
             <input type="text" class="popup__item popup__item_type_href" placeholder="Ссылка на картинку" name="input-href" required>
+            <span class="popup__error" id="input-href-error"></span>
           </fieldset>
           <input type="submit" class="popup__button" value="Сохранить">
         </form>
