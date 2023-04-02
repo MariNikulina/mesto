@@ -15,7 +15,7 @@
 }
 
 .popup__item:focus {
-  outline-color: #6391c1;
+  outline: 3px solid #6391c1;
 }
 
 

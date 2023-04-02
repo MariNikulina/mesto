@@ -173,3 +173,13 @@ initialCards.forEach((cardData) => {
   const newCardFromInitialCards = createCard (cardData);
   cardContainer.append(newCardFromInitialCards);
 });
+
+const popups = Array.from(document.querySelectorAll('.popup'));
+popups.forEach((popup) => {
+  popup.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Esc') {
+      console.log(evt.key);
+      closePopup(popup);
+    }
+  })
+})

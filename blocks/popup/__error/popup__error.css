@@ -1,10 +1,11 @@
 .popup__error {
-  display: block;
+  display: none;
   margin-top: 5px;
   font-size: 12px;
   line-height: 1.25;
   font-weight: 400;
   color: #FF0000;
+  min-height: 15px;
 }
 
 .popup__error:nth-of-type(1) {
