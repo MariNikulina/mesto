@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mesto</title>
+  <link rel="icon" href="#">
   <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="page">
@@ -36,10 +37,14 @@
         <h3 class="popup__title">Редактировать профиль</h3>
         <form action="#" class="popup__form popup__form_popup_profile" name="popup-profile" novalidate>
           <fieldset class="popup__input-container">
-            <input type="text" class="popup__item popup__item_type_name" placeholder="Имя" name="input-name" required minlength="2" maxlength="40">
-            <span class="popup__error" id="input-name-error">nn</span>
-            <input type="text" class="popup__item popup__item_type_job" placeholder="О себе" name="input-job" required minlength="2" maxlength="200">
-            <span class="popup__error" id="input-job-error"></span>
+            <label class="popup__label">
+              <input type="text" class="popup__item popup__item_type_name" placeholder="Имя" name="input-name" required minlength="2" maxlength="40">
+              <span class="popup__error" id="input-name-error"></span>
+            </label>
+            <label class="popup__label">
+              <input type="text" class="popup__item popup__item_type_job" placeholder="О себе" name="input-job" required minlength="2" maxlength="200">
+              <span class="popup__error" id="input-job-error"></span>
+            </label>
           </fieldset>
           <input type="submit" class="popup__button" value="Сохранить">
         </form>
@@ -51,10 +56,14 @@
         <h3 class="popup__title">Новое место</h3>
         <form action="#" class="popup__form popup__form_popup_cards" name="popup-cards" novalidate>
           <fieldset class="popup__input-container">
-            <input type="text" class="popup__item popup__item_type_title" placeholder="Название" name="input-title" required minlength="2" maxlength="30">
-            <span class="popup__error" id="input-title-error"></span>
-            <input class="popup__item popup__item_type_href" placeholder="Ссылка на картинку" name="input-href" required type="url">
-            <span class="popup__error" id="input-href-error"></span>
+            <label class="popup__label">
+              <input type="text" class="popup__item popup__item_type_title" placeholder="Название" name="input-title" required minlength="2" maxlength="30">
+              <span class="popup__error" id="input-title-error"></span>
+            </label>
+            <label class="popup__label">
+              <input class="popup__item popup__item_type_href" placeholder="Ссылка на картинку" name="input-href" required type="url">
+              <span class="popup__error" id="input-href-error"></span>
+            </label>
           </fieldset>
           <input type="submit" class="popup__button" value="Сохранить">
         </form>

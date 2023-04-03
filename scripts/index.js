@@ -21,20 +21,14 @@ const closeButtons = document.querySelectorAll('.popup__close-icon');
 
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeCardByEscapeOrClickOnOverlay);
+  deleteTextError(popup);
 };
 
 closeButtons.forEach((button) => {
   const popup = button.closest('.popup');
   button.addEventListener('click', () => closePopup(popup));
 });
-
-/*
-const closePopupByClickOnOverlay = function (event) {
-  if (event.target === event.currentTarget) {
-    closePopup();
-  }
-};
-*/
 
 function openProfilePopup () {
 
@@ -86,12 +80,19 @@ const initialCards = [
   }
 ];
 
-/*открытие попапов*/
+/*открытие попапов и закрытие по клику и кнопке Esc*/
 function openPopup (popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeCardByEscapeOrClickOnOverlay);
+  popup.addEventListener('click', closeCardByEscapeOrClickOnOverlay);
 };
 
-buttonOpenCardPopup.addEventListener('click', () => openPopup(formCardPopup));
+
+
+buttonOpenCardPopup.addEventListener('click', () => {
+  formCard.reset();
+  openPopup(formCardPopup)
+});
 
 /*Переключение лайков карточки*/
 function toggleLikeCard (evt) {
@@ -154,12 +155,21 @@ initialCards.forEach((cardData) => {
   cardContainer.append(newCardFromInitialCards);
 });
 
-const popups = Array.from(document.querySelectorAll('.popup'));
-popups.forEach((popup) => {
-  popup.addEventListener('keydown', (evt) => {
-    if (evt.key === 'Esc') {
-      console.log(evt.key);
-      closePopup(popup);
-    }
-  })
-})
+function closeCardByEscapeOrClickOnOverlay (evt) {
+  if (evt.key === 'Escape' || evt.target === evt.currentTarget) {
+    const cardActive = document.querySelector('.popup_opened');
+    if (cardActive) {
+      closePopup(cardActive);
+    };
+  };
+};
+
+function deleteTextError (form) {
+  const inputs = Array.from(form.querySelectorAll('.popup__item'));
+  inputs.forEach((input) => {
+    input.classList.remove('popup__item_type_error');
+    const errorElement = document.getElementById(`${input.name}-error`);
+    errorElement.classList.remove('popup__error_visible');
+    errorElement.textContent = '';
+  });
+}
