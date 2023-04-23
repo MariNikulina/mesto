@@ -18,6 +18,11 @@ const titleImageText = imagePopup.querySelector('.popup__title_popup_image');
 const popups = document.querySelectorAll('.popup');
 const cardTemplate = document.querySelector('#card-template').content;
 
+const validationProfileForm = new FormValidator(validateConfig, profileForm);
+const validationCardForm = new FormValidator(validateConfig, cardForm);
+
+validationProfileForm.enableValidation();
+validationCardForm.enableValidation();
 
 function closePopup (popup) {
   popup.classList.remove('popup_opened');
@@ -97,7 +102,7 @@ buttonOpenCardPopup.addEventListener('click', () => {
   openPopup(cardPopup)
 });
 
-export { pictureImage, titleImageText, openImagePopup, openPopup, imagePopup };
+export {openImagePopup};
 
 
 /*Переключение лайков карточки*/
@@ -181,11 +186,13 @@ function closeCardByEscape (evt) {
 function deleteProfileTextError (form) {
   const inputs = Array.from(form.querySelectorAll('.popup__item'));
   inputs.forEach((input) => {
-    input.classList.remove('popup__item_type_error');
-    const errorElement = document.getElementById(`${input.name}-error`);
-    errorElement.classList.remove('popup__error_visible');
-    errorElement.textContent = '';
+    validationProfileForm.hideInputError(input);
   });
 }
+
+/*input.classList.remove('popup__item_type_error');
+    const errorElement = document.getElementById(`${input.name}-error`);
+    errorElement.classList.remove('popup__error_visible');
+    errorElement.textContent = '';*/
 
 
