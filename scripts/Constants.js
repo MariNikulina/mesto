@@ -1,4 +1,4 @@
-import FormValidator from './Validate.js';
+import FormValidator from './validate.js';
 
 const profileOpenButton = document.querySelector('.profile__edit-button');
 const profilePopup = document.querySelector('.popup_popup_profile');
