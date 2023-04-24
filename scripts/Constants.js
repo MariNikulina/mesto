@@ -1,5 +1,3 @@
-import FormValidator from './validate.js';
-
 const profileOpenButton = document.querySelector('.profile__edit-button');
 const profilePopup = document.querySelector('.popup_popup_profile');
 const nameInput = profilePopup.querySelector('.popup__item_type_name');
@@ -19,15 +17,13 @@ const titleImageText = imagePopup.querySelector('.popup__title_popup_image');
 const popups = document.querySelectorAll('.popup');
 
 const validateConfig = {
+  formSelector: '.popup__form',
   inputSelector: '.popup__item',
   submitButtonSelector: '.popup__button',
   inactiveButtonClass: 'popup__button_disabled',
   inputErrorClass: 'popup__item_type_error',
   errorClass: 'popup__error_visible'
 };
-
-const validationProfileForm = new FormValidator(validateConfig, profileForm);
-const validationCardForm = new FormValidator(validateConfig, cardForm);
 
 const initialCards = [
   {
@@ -57,5 +53,5 @@ const initialCards = [
 ];
 
 export { profileOpenButton, profilePopup,  nameInput, jobInput, nameText, jobText, profileForm, imagePopup, cardPopup,
-  titleInput, hrefInput, cardForm, cardContainer, buttonOpenCardPopup, pictureImage, titleImageText, popups,
-  validationProfileForm, validationCardForm, initialCards };
+  titleInput, hrefInput, cardForm, cardContainer, buttonOpenCardPopup, pictureImage, titleImageText, popups, initialCards,
+  validateConfig };

@@ -1,14 +1,25 @@
 import Card from './Card.js';
+import FormValidator from './FormValidator.js';
 import { profileOpenButton, profilePopup,  nameInput, jobInput, nameText, jobText, profileForm, imagePopup, cardPopup,
   titleInput, hrefInput, cardForm, cardContainer, buttonOpenCardPopup, pictureImage, titleImageText, popups,
-  validationProfileForm, validationCardForm, initialCards } from './Constants.js';
+  initialCards, validateConfig } from './Constants.js';
 
-validationProfileForm.enableValidation();
-validationCardForm.enableValidation();
+const formValidators = {};
+
+const enableValidation = (validateConfig) => {
+  const formList = Array.from(document.querySelectorAll(validateConfig.formSelector));
+  formList.forEach((formElement) => {
+    const validator = new FormValidator(validateConfig, formElement);
+    const formName = formElement.getAttribute('name');
+    formValidators[formName] = validator;
+    validator.enableValidation();
+  })
+}
+
+enableValidation(validateConfig);
+
 
 function openProfilePopup () {
-
-  deleteProfileTextError(profileForm);
 
   nameInput.value = nameText.textContent;
   jobInput.value = jobText.textContent;
@@ -22,10 +33,10 @@ function openPopup (popup) {
   document.addEventListener('keydown', closeCardByEscape);
 };
 
-const openImagePopup = (cardData) => {
-  pictureImage.src = cardData.link;
-  pictureImage.alt = cardData.name.slice(0, 1).toUpperCase() + cardData.name.slice(1);
-  titleImageText.textContent = cardData.name.slice(0, 1).toUpperCase() + cardData.name.slice(1);
+const handleCardClick = (name, link) => {
+  pictureImage.src = link;
+  pictureImage.alt = name.slice(0, 1).toUpperCase() + name.slice(1);
+  titleImageText.textContent = name.slice(0, 1).toUpperCase() + name.slice(1);
   openPopup(imagePopup);
 };
 
@@ -54,7 +65,10 @@ function closeCardByEscape (evt) {
   };
 };
 
-profileOpenButton.addEventListener('click', () => openProfilePopup());
+profileOpenButton.addEventListener('click', () => {
+  formValidators['profile-form'].resetValidation();
+  openProfilePopup()
+});
 
 function handleProfileFormSubmit (evt) {
   evt.preventDefault();
@@ -68,11 +82,12 @@ function handleProfileFormSubmit (evt) {
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 
 buttonOpenCardPopup.addEventListener('click', () => {
+  formValidators['card-form'].resetValidation();
   openPopup(cardPopup)
 });
 
 function createCard (cardData) {
-  const newCard = new Card (cardData, '#card-template');
+  const newCard = new Card (cardData, '#card-template', handleCardClick);
 
   const cardElement = newCard.generateCard();
 
@@ -101,13 +116,3 @@ initialCards.forEach((cardData) => {
   const newCardFromInitialCards = createCard (cardData);
   cardContainer.append(newCardFromInitialCards);
 });
-
-
-function deleteProfileTextError (form) {
-  const inputs = Array.from(form.querySelectorAll('.popup__item'));
-  inputs.forEach((input) => {
-    validationProfileForm.hideInputError(input);
-  });
-}
-
-export {openImagePopup};
