@@ -1,0 +1,20 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "* О проекте\r * Технологии\r * Результат",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MariNikulina/mesto.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MariNikulina/mesto/issues"
+  },
+  "homepage": "https://github.com/MariNikulina/mesto#readme"
+}
