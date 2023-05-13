@@ -1,10 +1,11 @@
-import Card from './Card.js';
-import FormValidator from './FormValidator.js';
-import Section from './Section.js';
-import { profileOpenButton, buttonOpenCardPopup, initialCards, validateConfig } from './Constants.js';
-import PopupWithImage from './PopupWithimage.js';
-import PopupWithForm from './PopupWithForm.js';
-import UserInfo from './UserInfo.js';
+import './index.css';
+import Card from '../components/Card.js';
+import FormValidator from '../components/FormValidator.js';
+import Section from '../components/Section.js';
+import { profileOpenButton, buttonOpenCardPopup, initialCards, validateConfig } from '../utils/Constants.js';
+import PopupWithImage from '../components/PopupWithimage.js';
+import PopupWithForm from '../components/PopupWithForm.js';
+import UserInfo from '../components/UserInfo.js';
 
 const formValidators = {};
 
