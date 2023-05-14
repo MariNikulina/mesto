@@ -16,13 +16,12 @@ export default class PopupWithForm extends Popup{
     return this._formValues;
   }
 
-  setData({ inputName: nameUser, inputJob: jobUser }) {
-    const obj = { inputName: nameUser, inputJob: jobUser };
+  setData(userData) {
     this._inputList.forEach((inputElement) => {
-      Object.keys(obj).forEach((key) => {
+      Object.keys(userData).forEach((key) => {
 
         if (key === inputElement.name) {
-          inputElement.value = obj[key];
+          inputElement.value = userData[key];
         }
       })
     })
@@ -36,12 +35,8 @@ export default class PopupWithForm extends Popup{
     });
   }
 
-  _reset = () => {
-    this._formElement.reset();
-  }
-
-
   close() {
-    super.close(this._reset);
+    super.close();
+    this._formElement.reset();
   }
 }

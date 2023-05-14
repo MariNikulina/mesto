@@ -51,9 +51,9 @@ const userInfo = new UserInfo({
 });
 
 const profileFormUser = new PopupWithForm({
-  handleFormSubmit: () => {
+  handleFormSubmit: (obj) => {
 
-    userInfo.setUserInfo(profileFormUser._getInputValues());
+    userInfo.setUserInfo(obj);
 
     profileFormUser.close();
   }

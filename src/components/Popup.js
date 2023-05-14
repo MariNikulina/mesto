@@ -5,12 +5,9 @@ export default class Popup {
 
   _handleEscClose = (evt) => {
     if (evt.key === 'Escape') {
-      this._cardActive = document.querySelector('.popup_opened');
-      if (this._cardActive) {
-        this._cardActive.classList.remove('popup_opened');
-      }
-    };
-    document.removeEventListener('keydown', this._handleEscClose);
+      this.close();
+      };
+
   }
 
   open() {
@@ -18,16 +15,9 @@ export default class Popup {
     document.addEventListener('keydown', this._handleEscClose);
   }
 
-  _resetCallback = () => {
-    this._reset();
-    this._popup.removeEventListener('animationend', this._resetCallback);
-  }
-
   close() {
     this._popup.classList.remove('popup_opened');
-    if (this._reset) {
-      this._popup.addEventListener('animationend', this._resetCallback);
-    }
+    document.removeEventListener('keydown', this._handleEscClose);
   }
 
   setEventListeners() {
