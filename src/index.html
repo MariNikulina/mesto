@@ -77,6 +77,15 @@
         </figure>
       </div>
     </section>
+    <section class="popup popup_popup_confirmation">
+      <div class="popup__container">
+        <button type="button" class="popup__close-icon" aria-label="Закрыть"></button>
+        <h3 class="popup__title">Вы уверены?</h3>
+        <form action="#" class="popup__form popup__form_popup_confirmation" name="confirmation-form" novalidate>
+          <input type="submit" class="popup__button" value="Да">
+        </form>
+      </div>
+    </section>
     <template id="card-template">
       <li class="card">
         <img src="#" alt="Название места" class="card__image">
@@ -84,6 +93,7 @@
         <div class="card__like-place">
           <h2 class="card__title"></h2>
           <button type="button" class="card__like-button" aria-label="Нравится"></button>
+          <output class="card__like-number"></output>
         </div>
       </li>
     </template>

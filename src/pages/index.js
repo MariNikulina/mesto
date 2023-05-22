@@ -24,8 +24,16 @@ enableValidation(validateConfig);
 const popupWithImage = new PopupWithImage('.popup_popup_image');
 popupWithImage.setEventListeners();
 
+const popupConfirmation = new PopupWithForm({
+  handleFormSubmit: () => {
+    popupConfirmation.close();
+  }
+}, '.popup_popup_confirmation');
+
+popupConfirmation.setEventListeners();
+
 const createCard = (cardData) => {
-  const newCard = new Card (cardData, handleCardClick, '#card-template');
+  const newCard = new Card (cardData, handleCardClick, handleTrashButtonClick, '#card-template');
 
   const cardElement = newCard.generateCard();
 
@@ -34,6 +42,10 @@ const createCard = (cardData) => {
 
 const handleCardClick = (name, link) => {
   popupWithImage.open( name, link );
+}
+
+const handleTrashButtonClick = () => {
+  popupConfirmation.open();
 }
 
 const cardList = new Section({
