@@ -13,6 +13,8 @@
   background-image: url(../../../images/photo-grid-button-trash.svg);
   background-repeat: no-repeat;
   background-position: center center;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .card__trash-button:hover {
